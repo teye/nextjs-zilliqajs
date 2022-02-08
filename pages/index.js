@@ -1,6 +1,9 @@
 import Head from 'next/head'
+const { Zilliqa } = require('@zilliqa-js/zilliqa');
+
 
 export default function Home() {
+
   return (
     <div className="container">
       <Head>

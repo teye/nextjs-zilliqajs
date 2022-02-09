@@ -83,3 +83,6 @@ The command '/bin/sh -c yarn run build' returned a non-zero code: 1
 ## Observations
 
 If we use nextjs in `serverless` mode and configure the webpack to resolve the `fs`. We will encounter build errors in docker if we also import zilliqa-js >= 3.3.2. However, if we hardcode zilliqa-js to <= 3.3.1, then there would not be any build errors.
+
+## Solution
+NextJS has deprecated `target` options in their latest NextJS. See https://nextjs.org/docs/upgrading#target-option-deprecated and https://nextjs.org/docs/advanced-features/output-file-tracing. As per NextJS documentation: "_Furthermore, this removes the need for the deprecated serverless target which can cause various issues and also creates unnecessary duplication._". It is therefore recommended for anyone using NextJS with ZilliqaJS to update their NextJS version and omit the deprecated `target` options.
